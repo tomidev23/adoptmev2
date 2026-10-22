@@ -1,29 +1,25 @@
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 
-const bodyFont = Manrope({
-  variable: "--font-manrope",
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
-});
-
-const headingFont = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Korea Server Landing Page",
-  description: "A Next.js recreation inspired by a Korean game server landing page.",
+  title: "Nusa Realm — Hub Server Komunitas Asia Tenggara",
+  description: "Server komunitas independen Asia Tenggara dengan ping rendah, gameplay stabil, dan pengalaman multiplayer seru.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      className={`${bodyFont.variable} ${headingFont.variable} h-full antialiased`}
+      lang="id"
+      className={`${notoSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col font-sans bg-[#0a0b14] text-white">{children}</body>
     </html>
   );
 }
